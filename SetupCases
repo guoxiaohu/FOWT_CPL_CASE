@@ -1,0 +1,19 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+cd LeftDomain
+
+runApplication blockMesh
+runApplication snappyHexMesh -overwrite
+cp -r 0.org 0 > /dev/null 2>&1
+
+cd ../RightDomain
+
+runApplication blockMesh
+runApplication snappyHexMesh -overwrite
+cp -r 0.org 0 > /dev/null 2>&1
+
+cd ..

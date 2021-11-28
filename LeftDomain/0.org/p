@@ -1,0 +1,43 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      p_rgh;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    left_inlet
+    {
+        type            zeroGradient;
+    }
+
+    "left_bottom|left_top|left_front|left_back"
+    {
+        type            fixedFluxPressure;
+        value           uniform 0;
+    }
+
+    // Shared boundaries
+
+    left_outlet // All these BC's will need to be coupled BC's
+    {
+        //type            ????;
+        //value           uniform 0;
+    }
+}
+
+// ************************************************************************* //
