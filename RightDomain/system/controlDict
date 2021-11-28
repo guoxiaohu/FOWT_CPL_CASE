@@ -15,7 +15,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     pisoBodyFoam;
+application     pisoFSIFoam;
 
 startFrom       latestTime;
 
