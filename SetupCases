@@ -9,11 +9,13 @@ cd LeftDomain
 runApplication blockMesh
 runApplication snappyHexMesh -overwrite
 cp -r 0.org 0 > /dev/null 2>&1
+runApplication decomposePar
 
 cd ../RightDomain
 
 runApplication blockMesh
 runApplication snappyHexMesh -overwrite
 cp -r 0.org 0 > /dev/null 2>&1
+runApplication decomposePar
 
 cd ..
