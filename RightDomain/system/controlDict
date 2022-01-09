@@ -51,7 +51,7 @@ maxCo           0.25;
 maxAlphaCo      0.25;
 maxDeltaT       1;
 
-functions
+/*functions
 {
 
     Centreline
@@ -210,7 +210,7 @@ functions
 	);
     }
 
-}
+} */
 
 libs
 (
