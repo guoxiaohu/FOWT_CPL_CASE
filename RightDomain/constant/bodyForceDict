@@ -14,7 +14,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-bodyForceNames (discTurbine);
+bodyForceNames ();
 
 discTurbineCoeffs
 {
