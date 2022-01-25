@@ -22,7 +22,7 @@ echo application is ${solverDomain2}
 cd ..
 
 cd ${domain1}
-solverDomain1=pisoCPLFoam
+solverDomain1=pisoFSIFoam
 echo application is ${solverDomain1}
 cd ../
 
@@ -30,9 +30,9 @@ echo -n "running with MUI..."
 
 # parMupSiF case with OpenFOAM_MUI(C++)_MUI(python)_FEniCS parallel run
 mpirun -np ${numProcsDomain1} ${solverDomain1} -case ${domain1} -world ${domain1} -parallel  \
-	< /dev/null > logFiles/log.domain1 2>&1 : \
+	: \
        -np ${numProcsDomain2} ${solverDomain2} -case ${domain2} -world ${domain2} -parallel  \
-        < /dev/null > logFiles/log.domain2 2>&1 
+        < /dev/null > logFiles/log.mui 2>&1 
 
 echo "Done"
 
